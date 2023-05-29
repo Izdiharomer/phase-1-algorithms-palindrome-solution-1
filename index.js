@@ -1,9 +1,41 @@
-function isPalindrome(word) {
-  // Write your algorithm here
+
+function isPalindrome(str) {
+
+  const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+ 
+  let start = 0;
+  let end = cleanStr.length - 1;
+
+  while (start < end) {
+
+    if (cleanStr[start] !== cleanStr[end]) {
+      return false;
+    }
+
+  
+    start++;
+    end--;
+  }
+
+
+  return true;
 }
 
 /* 
-  Add your pseudocode here
+  function isPalindrome(str):
+    cleanStr = removeNonAlphanumeric(toLowerCase(str))
+    start = 0
+    end = length(cleanStr) - 1
+    
+    while start < end:
+        if cleanStr[start] != cleanStr[end]:
+            return false
+        start = start + 1
+        end = end - 1
+    
+    return true
+
 */
 
 /*
